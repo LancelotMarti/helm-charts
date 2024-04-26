@@ -1,0 +1,18 @@
+apiVersion: v1
+entries:
+  lomas-server:
+  - apiVersion: v2
+    appVersion: 0.0.0
+    created: "2024-04-26T15:01:16.734866843Z"
+    dependencies:
+    - name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 13.18.1
+    description: FSO's Secure Data Disclosure deployment chart
+    digest: 9c042912238daeae39027918d8cbadc398395bbfece6f266adbd64f05762d893
+    name: lomas-server
+    type: application
+    urls:
+    - https://github.com/LancelotMarti/helm-charts/releases/download/lomas-server-0.0.4/lomas-server-0.0.4.tgz
+    version: 0.0.4
+generated: "2024-04-26T15:01:16.73487557Z"
