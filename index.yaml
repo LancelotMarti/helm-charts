@@ -14,6 +14,26 @@ entries:
   lomas-server:
   - apiVersion: v2
     appVersion: 0.5.0
+    created: "2026-06-02T08:23:40.052037588Z"
+    dependencies:
+    - condition: rabbitmq.create
+      name: rabbitmq
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 15.5.0
+    - condition: dex.create
+      name: dex
+      repository: https://charts.dexidp.io
+      version: 0.24.0
+    description: Lomas deployment chart
+    digest: 550044b2a25f138fc965c018d21008a26674f3183cb387f746e2b1c0b02719bf
+    icon: https://raw.githubusercontent.com/dscc-admin-ch/lomas/refs/heads/master/images/lomas_logo.svg
+    name: lomas-server
+    type: application
+    urls:
+    - https://github.com/LancelotMarti/helm-charts/releases/download/lomas-server-0.5.1/lomas-server-0.5.1.tgz
+    version: 0.5.1
+  - apiVersion: v2
+    appVersion: 0.5.0
     created: "2026-06-02T08:20:13.145126722Z"
     dependencies:
     - condition: rabbitmq.create
@@ -63,4 +83,4 @@ entries:
     urls:
     - https://github.com/LancelotMarti/helm-charts/releases/download/statbot-0.0.8/statbot-0.0.8.tgz
     version: 0.0.8
-generated: "2026-06-02T08:20:13.581223469Z"
+generated: "2026-06-02T08:23:40.052054593Z"
