@@ -1,6 +1,37 @@
 apiVersion: v1
 entries:
+  llm-serving:
+  - apiVersion: v2
+    appVersion: 0.8.2
+    created: "2026-06-02T08:20:12.965121438Z"
+    description: An example of helm chart to deploy a llm serving
+    digest: bfc1d36f8df0f4b5ad242ef9524fe2301ecf4ef9d2a3559da20f8bc7f3e79c30
+    name: llm-serving
+    type: application
+    urls:
+    - https://github.com/LancelotMarti/helm-charts/releases/download/llm-serving-0.1.3/llm-serving-0.1.3.tgz
+    version: 0.1.3
   lomas-server:
+  - apiVersion: v2
+    appVersion: 0.5.0
+    created: "2026-06-02T08:20:13.145126722Z"
+    dependencies:
+    - condition: rabbitmq.create
+      name: rabbitmq
+      repository: oci://registry-1.docker.io/bitnamicharts
+      version: 15.5.0
+    - condition: dex.create
+      name: dex
+      repository: https://charts.dexidp.io
+      version: 0.24.0
+    description: Lomas deployment chart
+    digest: 40bd545d48ea9185f9f6f8ef244d320118033a2ad579f5efca79d2d036d1b203
+    icon: https://raw.githubusercontent.com/dscc-admin-ch/lomas/refs/heads/master/images/lomas_logo.svg
+    name: lomas-server
+    type: application
+    urls:
+    - https://github.com/LancelotMarti/helm-charts/releases/download/lomas-server-0.5.0/lomas-server-0.5.0.tgz
+    version: 0.5.0
   - apiVersion: v2
     appVersion: 0.0.0
     created: "2024-04-26T15:01:16.734866843Z"
@@ -15,4 +46,21 @@ entries:
     urls:
     - https://github.com/LancelotMarti/helm-charts/releases/download/lomas-server-0.0.4/lomas-server-0.0.4.tgz
     version: 0.0.4
-generated: "2024-04-26T15:01:16.73487557Z"
+  statbot:
+  - apiVersion: v2
+    appVersion: 0.0.8
+    created: "2026-06-02T08:20:13.581212839Z"
+    dependencies:
+    - alias: vllm
+      condition: vllm.enabled
+      name: llm-serving
+      repository: https://dscc-admin-ch.github.io/helm-charts
+      version: 0.1.3
+    description: A Helm chart for deploying the Statbot API and UI
+    digest: 4cd95974830bdb5ad4a9526078eee26b1ec1f52b07617af533da6d589f8c7cd9
+    name: statbot
+    type: application
+    urls:
+    - https://github.com/LancelotMarti/helm-charts/releases/download/statbot-0.0.8/statbot-0.0.8.tgz
+    version: 0.0.8
+generated: "2026-06-02T08:20:13.581223469Z"
